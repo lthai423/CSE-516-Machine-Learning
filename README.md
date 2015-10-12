@@ -1,3 +1,3 @@
-# CSE-516-Machine-Learning
-###Labs, projects, and other goodies from my ML class.
+#Machine-Learning
+###Labs, projects, and other goodies from my escapades into ML
 ######Lab 1 - Q Learning 
