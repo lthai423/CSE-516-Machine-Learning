@@ -1,6 +1,6 @@
-function numberedMatrix = makeNumMatrix(n)
-    x = zeros(n);
-    for i = 1:n^2
+function numberedMatrix = makeNumMatrix(n, m)
+    x = zeros(n, m);
+    for i = 1:n*m
         x(i) = i;
     end
     numberedMatrix = x;
