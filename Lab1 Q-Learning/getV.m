@@ -1,4 +1,5 @@
-function V = getV(selectedState)
+function V = getV(selectedState, nextActionToTake)
     global vTable
-    V = vTable(selectedState);
+    display(selectedState)
+    V = vTable(selectedState, nextActionToTake);
 end

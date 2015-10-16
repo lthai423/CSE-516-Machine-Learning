@@ -1,4 +1,5 @@
-function qValue = getQ_Value(nextState)
-    global discount
-    qValue = getImmediateReward(nextState) + (discount * getV(nextState));
+function getQ_Value(nextState, nextActionToTake, cState)
+    global discount vTable
+    vTable(cState, nextActionToTake) = getImmediateReward(nextState) + ...
+        (discount * getMaxValue(nextState));
 end

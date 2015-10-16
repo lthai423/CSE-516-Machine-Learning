@@ -1,19 +1,14 @@
 function policyTable = qLearning(nIterations, xSize, ySize, targetState, learningRate, listOfObstacles)
-    global incompPolicyTable
+    global vTable
     instantiateGlobalVars(ySize, xSize, learningRate, targetState, listOfObstacles)
     for n = 1:nIterations
-        display(n)
-        cState = randInitState; % use random initState function
+        cState = randInitState;
         while cState ~= targetState
-                nextActionToTake = takeAction(cState); % isActionValid()
+                nextActionToTake = takeAction(cState);
                 nextState = getNextState(cState, nextActionToTake);
-                qValue = getQ_Value(nextState);
-                updateV_Value(cState, qValue, nextActionToTake) % if needed
+                getQ_Value(nextState, nextActionToTake, cState);
                 cState = nextState;
         end
     end
-    for i = 1:length(listOfObstacles)
-       incompPolicyTable(listOfObstacles(i)) = -inf;
-    end
-    policyTable = incompPolicyTable;
+    policyTable = vTable;
 end
