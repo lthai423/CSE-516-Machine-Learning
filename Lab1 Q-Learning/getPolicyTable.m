@@ -16,6 +16,9 @@ function maxValue = getPolicyTable(qMatrix, ySize, xSize, target, listOfObstacle
     for k = 1:length(listOfObstacles)
        grid(listOfObstacles(k)) = -inf;
     end
+    for j = 1:length(target)
+        grid(target(j)) = inf;
+    end
     maxValue = grid;
     
 end

@@ -1,6 +1,6 @@
 function reward = getImmediateReward(cState)
     global tState listOfObstacles
-    if cState == tState
+    if isempty(find(tState == cState, 1)) == 0
         reward = 100; 
     elseif isempty(find(listOfObstacles == cState, 1)) == 0
         reward = -1000;

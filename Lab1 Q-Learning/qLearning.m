@@ -3,7 +3,7 @@ function policyTable = qLearning(nIterations, xSize, ySize, targetState, learnin
     instantiateGlobalVars(ySize, xSize, learningRate, targetState, listOfObstacles)
     for n = 1:nIterations
         cState = randInitState;
-        while cState ~= targetState
+        while isempty(find(targetState == cState, 1)) == 1
                 nextActionToTake = takeAction(cState);
                 nextState = getNextState(cState, nextActionToTake);
                 getQ_Value(nextState, nextActionToTake, cState);
