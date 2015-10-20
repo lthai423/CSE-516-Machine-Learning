@@ -7,4 +7,4 @@ function maxValue = getMaxValue(cState)
         end
     end
     maxValue = tempStorage;
-end
+end %taking max value of matrix at a row
